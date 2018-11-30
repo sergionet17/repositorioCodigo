@@ -23,13 +23,6 @@ export class ProductService {
       location : product.location
     });
   }
-  pruebaMeto(product: Product){
-    this.productList.push({
-      name : product.name,
-      category : product.category,
-      location : product.location
-    });
-  }
   updateProduct(product : Product){
     this.productList.update(product.$key,{
       name : product.name,
