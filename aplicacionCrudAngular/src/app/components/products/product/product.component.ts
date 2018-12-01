@@ -22,12 +22,15 @@ export class ProductComponent implements OnInit {
   }
 
   onSubmit(productForm: NgForm){
-    if(productForm.value.$key == null)
+    if(productForm.value.$key == null){
       this.productService.insertProduct(productForm.value)
-    else
+      this.toastr.success('full operation','producto agregado');
+    }
+    else{
     this.productService.updateProduct(productForm.value);    
     this.resetForm(productForm);
     this.toastr.success('full operation','producto modificado');
+    }
   }
   
   resetForm(productForm?: NgForm){
